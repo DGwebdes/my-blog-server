@@ -1,7 +1,7 @@
 
 const express = require('express');
 const contentful = require('contentful');
-// const cors = require('cors');
+const cors = require('cors');
 require('dotenv').config();
 
 // Express server setup
@@ -9,7 +9,7 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-// app.use(cors({ origin: 'https://dgwebdes.github.io/'}));
+app.use(cors());
 
 // app.use(express.json());
 
