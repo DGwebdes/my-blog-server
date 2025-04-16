@@ -21,6 +21,7 @@ const client = contentful.createClient({
 app.get("/api/posts", async (req, res) => {
     try {
         const response = await client.getEntries();
+
         res.json(response.items);
     } catch (err) {
         res.status(500).json({ message: err });
@@ -40,7 +41,7 @@ app.get("/api/posts/:postId", async (req, res) => {
                 content: response.fields.content,
                 author: response.fields.author,
                 publishDate: new Date(
-                    response.fields.publishDate
+                    response.fields.publishDate,
                 ).toLocaleDateString(),
             };
             res.json(post);
