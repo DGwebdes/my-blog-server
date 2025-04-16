@@ -11,10 +11,10 @@ const app = express();
 app.use(
     cors({
         origin: "https://dgwebdes.github.io",
-    })
+    }),
 );
 
-// app.use(express.json());
+app.use(express.json());
 
 // Contentful API connection
 const client = contentful.createClient({
